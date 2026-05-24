@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Plus Jakarta Sans', sans-serif;
+
+  /* Theme Colors: Dark Cybernetic */
+  --bg-app: #080c10;
+  --bg-sidebar: #0f141a;
+  --bg-chat: #0a0e14;
+  --bg-bubble-user: #1d2530;
+  --bg-bubble-ai: #121822;
+  --bg-input: #151c27;
+
+  --accent-green: #00ff87;
+  --accent-violet: #8b5cf6;
+  --accent-purple: #7c3aed;
+  --accent-red: #ff0000;
+  --accent-cyan: #00ffff;
+  --accent-orange: #ffa500;
+  --accent-yellow: #ffff00;
+  --accent-pink: #ff00ff;
+
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --border-color: rgba(0, 255, 135, 0.08);
+  --border-glow: rgba(0, 255, 135, 0.2);
+  --border-violet: rgba(139, 92, 246, 0.15);
+
+  --shadow-glow: 0 0 20px rgba(0, 255, 135, 0.15);
+  --shadow-violet: 0 0 20px rgba(139, 92, 246, 0.15);
+
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-bubble-user);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* Custom animations */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 255, 135, 0.2);
+    border-color: rgba(0, 255, 135, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+    border-color: rgba(0, 255, 135, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 135, 0.2);
+    border-color: rgba(0, 255, 135, 0.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Code Highlights Theme */
+pre {
+  background: #0d1117 !important;
+  border: 1px solid var(--border-violet);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.8rem 0;
+  position: relative;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  color: var(--accent-green);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+th {
+  background: var(--bg-bubble-user);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Senior Optimizations: High-Performance CSS over React Event Listeners */
+.session-row:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.session-row:hover .delete-session-btn {
+  opacity: 1 !important;
+}
+
+.chat-input-wrapper:focus-within {
+  border-color: var(--accent-violet) !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.15) !important;
+}
